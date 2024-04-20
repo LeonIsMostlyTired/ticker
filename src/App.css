@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #131722;
+  background-color: #f7f8fd;
+  padding: 100px 50px;
+}
+
+h1 {
+  text-align: center;
+  margin-block-end: 2.5rem;
+}
+
+.stock-ticker {
+  list-style: none;
+  font-size: 15px;
+  padding-block: 8px;
+  border-block: 1px solid;
+  overflow: hidden;
+  user-select: none;
+
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap);
+}
+
+/*This comment is just for testing purposes*/
+/*Another pointless comment*/
+
+.stock-ticker
+.company {
+  white-space: nowrap;
+}
+
+.stock-ticker ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+
+  animation: scroll 80s linear infinite;
+}
+
+/*
+.ticker-list:hover {
+  animation-play-state: paused;
+}
+*/
+
+.stock-ticker {
+  display: flex;
+  overflow: hidden;
+}
+
+.ticker-list {
+  display: flex;
+  justify-content: flex-start; /* Align items at the start */
+  flex-wrap: nowrap; /* Prevents the list items from wrapping onto a new line */
+  animation: scroll 20s linear infinite;
+  width: max-content; /* This will make the width of the container as wide as the content */
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.stock-ticker ul:first-child {
+  /* background-color: yellow; */
+}
+
+.stock-ticker ul:last-child {
+  /* background-color: pink; */
+}
+
+.stock-ticker .company,
+.stock-ticker .price {
+  font-weight: bold;
+}
+
+.stock-ticker .price {
+  margin-inline: 4px;
+}
+
+.stock-ticker .plus::before {
+  content: "↑";
+}
+
+.stock-ticker .minus::before {
+  content: "↓";
+}
+
+.stock-ticker .plus .change,
+.stock-ticker .plus::before {
+  color: #089981;
+}
+
+.stock-ticker .minus .change,
+.stock-ticker .minus::before {
+  color: #f23645;
+}
+
+li {
+  padding-left: 30px;
+}
